@@ -5,7 +5,7 @@ resource "aws_autoscaling_group" "public_slave_server_group" {
   max_size = "${var.public_slave_instance_count}"
   desired_capacity = "${var.public_slave_instance_count}"
 
-  load_balancers = ["${aws_elb.public_slaves.id}","${aws_elb.public_slaves.id}","${aws_elb.broadcaster_00_m.id}","${aws_elb.broadcaster_01_d.id}","${aws_elb.broadcaster_01_m.id}"]
+  load_balancers = ["${aws_elb.public_slaves.id}","${aws_elb.broadcaster_00_d.id}","${aws_elb.broadcaster_00_m.id}","${aws_elb.broadcaster_01_d.id}","${aws_elb.broadcaster_01_m.id}"]
 
   vpc_zone_identifier = [
     "${var.aws_subnet_public_a_id}",
